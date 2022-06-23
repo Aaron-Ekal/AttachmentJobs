@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% block content%}
+{{block.super}}
+<div class="container-fluid background text-center">
+    <br><br><br>
+    <h1 class="font-weight-bold text-center text-dark pt-5 ">The JobMag  <span class="auto-type" style="color: orangered;" ></span></h1>
+    <!-- <h1 class="nei" >Neighood Simplified</h1> -->
+    <br><br><br>
+    {% if request.user.profile.neighbourhood %}
+    {%else%}
+    <a href="{%url 'hoods'%}" class="btn mt-4 btn-warning pl-4 pr-4 font-weight-bold black"> Free Sign Up To Get Started</a>
+    {%endif%}
+    <br><br><br><br><br>
+    <h3 class="intro1 fs-5 font-weight-bold text-steel" >Alone, we can do so little; together we can do so much <br>
+        <span class="text-danger">Hellen Keller</span> 
+    </h3>
+</div>
+<!-- <div class="container pt-4">
+    {% if user.is_authenticated %}
+    {%else%}
+    <h2 class="font-weight-bold hoodapp text-center">Connecting to your dream job anytime, anywhere is now simplified</h2>
+    <p class="text-center"><a href="{%url 'register'%}" class="btn mt-4 join pl-4 pr-4 font-weight-bold black">SIGN UP</a></p>
+    {%endif%}
+   
+</div> -->
+{%endblock%}
